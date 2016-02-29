@@ -1,0 +1,8 @@
+<% if resource.errors.present? %>
+    <% resource.errors.full_messages.each do |message| %>
+        $('.answer-errors').html('<%= j message %>');
+    <% end %>
+<% else %>
+    $('.answers').html('<%= j render 'questions/answers', question: parent %>');
+    $('.new_answer #answer_body').val('');
+<% end %>
